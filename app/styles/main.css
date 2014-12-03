@@ -1,90 +1,222 @@
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
 }
 
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: "Lato", sans-serif;
+/*Utils*/
+
+.round {
+  border-radius: 50%;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+.red {
+  color: #FF0014;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
+#intro {
+  margin-bottom: 2em;
+}
+.head-block {
+  margin: 0.8em 0 0.8em;
+}
+.head-block h3 {
+  font-size: 1.3em;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.propic {
+  padding: .7em;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+.name {
+  margin: 0.4em 0 0em;
+  font-size: 2em;
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
+#specialties {
+  position: relative;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+.cube-heading {
+  margin: 1.4em 0 0.8em;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+#work {
+  padding: 2.5em 0 1.7em;
+  background: #ECF3FF;
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
+#work li {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-.marketing p + h4 {
-    margin-top: 28px;
+.padded-heading {
+  margin: 1em 0 .7em;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+.work-grid {
+  border-radius: 50%;
+}
 
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
+#technology {
+  padding: 6em 0;
+}
 
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
+#technology .padded-heading {
+  margin-top: .3em;
+}
 
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+#network {
+  background: #DBE7FF;
+  padding: 2.5em 0 .5em;
+}
+
+#network li {
+  text-align: center;
+}
+
+#network i {
+  font-size: 4em;
+}
+
+/*Cube*/
+
+.orange {
+  box-shadow: inset 0 0 30px #FFCE4F;
+}
+
+.green {
+  box-shadow: inset 0 0 30px #24FF4F;
+}
+
+.blue {
+  box-shadow: inset 0 0 30px #93BAFF;
+}
+
+.purple {
+  box-shadow: inset 0 0 30px #CE77FF;
+}
+
+.cube-wrapper {
+  width: 100%;
+  height: 240px;
+  position: relative;
+  -webkit-perspective: 1600px;
+  perspective: 1600px;
+  -webkit-animation: introduceCube 1.5s ease-out;
+  animation: introduceCube 1.5s ease-out;
+}
+
+.cube-wrapper .cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-animation: rotate 10s infinite linear;
+  animation: rotate 10s infinite linear;
+}
+
+.cube-wrapper figure {
+  width: 200px;
+  height: 200px;
+  left: 100px;
+  top: 0px;
+  background: rgba(248, 247, 247, 0.79);
+  position: absolute;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5em;
+  padding: 3em 1em 0;
+  color: rgba(0,0,0,0.5);
+  text-transform: uppercase;
+  transition: all 1s linear;
+}
+
+.cube-wrapper .back {
+  -webkit-transform: translateZ(-100px) rotateY(180deg);
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.cube-wrapper .left {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube-wrapper .right {
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube-wrapper .front {
+  -webkit-transform: translateZ(100px);
+  transform: translateZ(100px);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+
+@-webkit-keyframes introduceCube {
+  0% {
+    opacity: 0;
+    top: -20px;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+
+@keyframes introduceCube {
+  0% {
+    opacity: 0;
+    top: -20px;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
